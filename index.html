@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<meta http-equiv="X-UA-Compatible" content="ie-edge" />
+	<!-- Font Style -->
+	<link rel="preconnect" href="https://fonts.gstatic.com">
+	<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700&display=swap" rel="stylesheet">
+	<!-- Font Awesome -->
+	<link href="fontawesome5/css/all.css" rel="stylesheet"> <!--load all styles -->
+
+	<title>Starbucks Responsive Website</title>
+	<style type="text/css">
+		* {
+			padding: 0;
+			margin: 0;
+			box-sizing: border-box;
+			font-family: 'Montserrat', sans-serif;
+		}
+		:root {
+			--primaryColor: #c82027;
+			--secondaryColor: #c6a12e;
+			--textPrimaryColor: #000;
+			--textSecondaryColor: #757575;
+		}
+		body {
+			width: 100%;
+			height: 100vh;
+			overflow: hidden;
+		}
+		#starHeader {
+			width: 100%;
+
+		}
+		#starHeader .container {
+			width: 90%;
+			margin: 10px auto;
+			display: flex;
+			flex-wrap: wrap;
+			justify-content: space-between;
+			align-items: center;
+		}
+		#starHeader .container .starLogo {
+			flex-basis: 30%;
+		}
+		#starHeader .container .starLogo a{
+			text-decoration: none;
+		}
+		#starHeader .container .starLogo a img {
+			height: 60px;
+		}
+		#starHeader .container .starLogo a img:hover {
+			border-radius: 50%;
+			/*box-shadow: 4px 4px 6px #00000050;*/
+		}
+		#starHeader .container .starMenu {
+			flex-basis: 70%;
+			text-align: right;
+		}
+		#starHeader .container .starMenu  nav {
+
+		}
+		#starHeader .container .starMenu ul {
+			list-style: none;
+		}
+		#starHeader .container .starMenu ul li {
+			display: inline-block;
+		}
+		#starHeader .container .starMenu ul li a{
+			text-decoration: none;
+			padding: 10px 6px;
+			margin-left: 4px;
+			color: var(--textPrimaryColor);
+			font-size: 16px;
+			font-weight: bold;
+		}
+		#starHeader .container .starMenu ul li a:hover {
+			color: var(--textSecondaryColor);
+			/*box-shadow: 4px 4px 6px #00000050;*/
+		}
+		#subMenuHead {
+			position: relative;
+		}
+		#subMenuHead .subMenu {
+			/*width: 200px;*/
+			position: absolute;
+			display: none;
+			left: 0;
+			z-index: 4;
+			border: 1px solid var(--textPrimaryColor);
+			transition: .5s ease;
+			background-color: var(--secondaryColor);
+
+		}
+		#subMenuHead .subMenu li {
+			display: block;
+			margin: 10px 0; 
+			width: 100%;
+			text-align: left;
+			color: var(--primaryColor);
+		}
+		#subMenuHead .subMenu li a {
+			/*text-align: left;	*/
+			color: var(--primaryColor);
+		}
+		#subMenuHead:hover .subMenu{
+			display: block;
+		}
+
+		/*Star Page Info Text Style */
+		#starInfo {
+			width: 50%;
+			/*display: flex;*/
+			height: 100%;
+			float: left;
+			align-items: center;
+		}
+		#starInfo .container {
+			width: 90%;
+			margin: auto;
+			margin-right: 0;
+			margin-top: 25%;
+		}
+		#starInfo .container h1 {
+			font-size: 36px;
+			line-height: 1.5em;
+		}
+		#starInfo .container h2 {
+			font-size: 40px;
+			line-height: 1.5em;
+		}
+		#starInfo .container h2 span {
+			font-size: 50px;
+			font-weight: bolder;
+			color: var(--primaryColor);
+		}
+		#starInfo .container p{
+			color: var(--textSecondaryColor);
+			margin-bottom: 20px;
+		}
+		#starInfo .container .starBtn {
+			text-decoration: none;
+			text-transform: uppercase;
+			font-size: 16px;
+			font-weight: bold;
+			color: #fff;
+			background-color: var(--primaryColor);
+			padding: 10px 14px;
+			border: none;
+			border-radius: 30px;
+			transition: .5s;
+		}
+		#starInfo .container .starBtn:hover {
+			box-shadow: 4px 4px 8px #00000050;
+		}
+
+		/*Right Coffee Cup Show Section */
+		#starCoffee {
+			width: 50%;
+			height: 100%;
+			float: right;
+			position: relative;
+		}
+		#starCoffee .container {
+			width: 90%;
+			margin: auto;
+		}
+		#starCoffee .container .starBgCircle {
+			position: absolute;
+			bottom: -110%;
+			right: -100%;
+			z-index: 1;
+			background-color: var(--primaryColor);
+			width: 200%;
+			height: 200%;
+			border-radius: 50%;
+		}
+		#starCoffee .container img {
+			width: 72%;
+			position: absolute;
+			top: 10%;
+			left: 10%;
+			z-index: 2;
+		}
+		#starCoffee .container .socialIcons{
+			position: absolute;
+			top: 30%;
+			right: 5%;
+			z-index: 3;
+		}
+		#starCoffee .container .socialIcons i {
+			font-size: 28px;
+			display: block;
+			color: #fff;
+			margin: 20px 0;
+			cursor: pointer;
+			transition: .5s;
+		}
+		#starCoffee .container .socialIcons i:hover {
+			color: var(--secondaryColor);
+		}
+		#bottomProMenu {
+			width: 100%;
+			padding: 0;
+			position: fixed;
+			bottom: 20px;
+			left: 0;
+			z-index: 3;
+		}
+		#bottomProMenu .container {
+			text-align: center;
+		}
+		#bottomProMenu .container img {
+			height: 50px;
+			margin: 0 10px;
+			cursor: pointer;
+			transition: .5s;
+		}
+		#bottomProMenu .container img:hover {
+			transform: translateY(-30%);
+		}
+	</style>
+</head>
+<body>
+	<section id="starHeader">
+		<div class="container">
+			<div class="starLogo">
+				<a href="#"><img src="images/logo2.png"></a>
+			</div>
+			<div class="starMenu">
+				<nav>
+					<ul>
+						<li><a href="#">Home</a></li>
+						<li><a href="#">What's New</a></li>
+						<li id="subMenuHead"><a href="#">Menu</a>
+							<ul class="subMenu">
+								<li><a href="#">Burger</a></li>
+								<li><a href="#">Pizza</a></li>
+								<li><a href="#">Shawarma</a></li>
+								<li><a href="#">Fries</a></li>
+								<li><a href="#">Samosa</a></li>
+							</ul>
+						</li>
+						<li><a href="#">Contact</a></li>
+					</ul>
+				</nav>
+			</div>
+		</div>
+	</section>
+
+	<!-- Star Page Text  -->
+	<section id="starInfo">
+		<div class="container">
+			<h1>It's Not Just Fast Food</h1>
+			<h2>It's <span>StarTaste</span></h2>
+			<p>Everyday people eat fast food to keep themselves healthy and energatic but they mostly disappointted by non-professionals. Now here is StarTaste, which make you healthy and energatic.</p>
+			<a href="#" class="starBtn">Learn More</a>
+		</div>
+	</section>
+
+	<!-- Right Coffee Cup Show Section  -->
+	<section id="starCoffee">
+		<div class="container">
+			<div id="bgcircle" class="starBgCircle"></div>
+			<img id="starProduct" src="images/product1.png">
+			<div class="socialIcons">
+				<i class="fab fa-facebook"></i>
+				<i class="fab fa-twitter"></i>
+				<i class="fab fa-instagram"></i>
+			</div>
+		</div>
+	</section>
+
+	<!-- Starbucks Bottom Main Product Click & Change Menu -->
+	<section id="bottomProMenu">
+		<div class="container">
+			<img id="thumb1" src="images/product1.png">
+			<img id="thumb2" src="images/product2.png">
+			<img id="thumb3" src="images/product3.png">
+			<img id="thumb4" src="images/product4.png">
+			<img id="thumb5" src="images/product5.png">
+		</div>
+	</section>
+
+	<script type="text/javascript">
+		let thumb1 = document.getElementById('thumb1');
+		let thumb2 = document.getElementById('thumb2');
+		let thumb3 = document.getElementById('thumb3');
+		let thumb4 = document.getElementById('thumb4');
+		let thumb5 = document.getElementById('thumb5');
+		let starProduct = document.getElementById('starProduct');
+		let starBgCircle = document.getElementById('bgcircle');
+
+
+		thumb1.onclick = function(){
+			starProduct.src = 'images/product1.png';
+			// starBgCircle.style.backgroundColor = 'var(--primaryColor)';
+		}
+		thumb2.onclick = function(){
+			starProduct.src = 'images/product4.png';
+			// starBgCircle.style.backgroundColor = '#e97693';
+		}
+		thumb3.onclick = function(){
+			starProduct.src = 'images/product3.png';
+			// starBgCircle.style.backgroundColor = '#7dc7df';
+		}
+		thumb4.onclick = function(){
+			starProduct.src = 'images/product4.png';
+			// starBgCircle.style.backgroundColor = '#7dc7df';
+		}
+		thumb5.onclick = function(){
+			starProduct.src = 'images/product5.png';
+			// starBgCircle.style.backgroundColor = '#7dc7df';
+		}
+		if(starProduct.src == 'images/product1.png'){
+			starProduct.style.marginTop = '4%';
+		}
+	</script>
+</body>
+</html>
